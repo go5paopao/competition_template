@@ -1,5 +1,5 @@
 {
   "competition_name": "write proper name in kaggle api",
-  "competition_slug": "{{cookiecutter.project_name.lower().replace(' ', '_')}}",
+  "competition_slug": "{{cookiecutter.competition_name.lower().replace(' ', '_')}}",
   "is_kaggle": "Yes/No"
 }
