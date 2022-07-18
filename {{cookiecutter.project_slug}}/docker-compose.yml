@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: env_files/cpu/Dockerfile
-    container_name: {{cookiecutter.project_slug}}"_cpu"
+    container_name: {{cookiecutter.project_slug}}-cpu
     volumes:
       - ./:/tmp/working
     working_dir: /tmp/working
@@ -14,7 +14,7 @@ services:
     build:
       context: .
       dockerfile: env_files/cpu/Dockerfile
-    container_name: {{cookiecutter.project_slug}}"_cpu"
+    container_name: {{cookiecutter.project_slug}}-cpu
     volumes:
       - ./:/tmp/working
     working_dir: /tmp/working
@@ -27,7 +27,7 @@ services:
      shm_size: '32gb'
      dockerfile: env_files/gpu/Dockerfile
     shm_size: '32gb'
-    container_name: {{cookiecutter.project_slug}}"_gpu"
+    container_name: {{cookiecutter.project_slug}}-gpu
     volumes:
      - ./:/tmp/working
     working_dir: /tmp/working
@@ -43,7 +43,7 @@ services:
      shm_size: '32gb'
      dockerfile: env_files/gpu/Dockerfile
     shm_size: '32gb'
-    container_name: {{cookiecutter.project_slug}}"_gpu"
+    container_name: {{cookiecutter.project_slug}}-gpu
     volumes:
      - ./:/tmp/working
     working_dir: /tmp/working
