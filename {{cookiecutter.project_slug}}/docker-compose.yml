@@ -1,0 +1,56 @@
+version: "3"
+services:
+  cpu:
+    build:
+      context: .
+      dockerfile: env_files/cpu/Dockerfile
+    container_name: {{cookiecutter.project_slug}}"_cpu"
+    volumes:
+      - ./:/tmp/working
+    working_dir: /tmp/working
+    ports:
+      - 8888:8888
+  cpu_jupyter:
+    build:
+      context: .
+      dockerfile: env_files/cpu/Dockerfile
+    container_name: {{cookiecutter.project_slug}}"_cpu"
+    volumes:
+      - ./:/tmp/working
+    working_dir: /tmp/working
+    ports:
+      - 8888:8888
+    command: jupyter lab --ip=0.0.0.0 --port 8888 --allow-root --NotebookApp.notebook_dir='/tmp/working' --no-browser
+  gpu:
+    build:
+     context: .
+     shm_size: '32gb'
+     dockerfile: env_files/gpu/Dockerfile
+    shm_size: '32gb'
+    container_name: {{cookiecutter.project_slug}}"_gpu"
+    volumes:
+     - ./:/tmp/working
+    working_dir: /tmp/working
+    runtime: nvidia
+    environment:
+     - LD_LIBRARY_PATH=/usr/local/cuda/lib64
+    ports:
+     - 8888:8888
+
+  gpu_jupyter:
+    build:
+     context: .
+     shm_size: '32gb'
+     dockerfile: env_files/gpu/Dockerfile
+    shm_size: '32gb'
+    container_name: {{cookiecutter.project_slug}}"_gpu"
+    volumes:
+     - ./:/tmp/working
+    working_dir: /tmp/working
+    runtime: nvidia
+    environment:
+     - LD_LIBRARY_PATH=/usr/local/cuda/lib64
+    ports:
+     - 8888:8888
+    command: jupyter lab --ip=0.0.0.0 --port 8888 --allow-root --NotebookApp.notebook_dir='/tmp/working' --no-browser
+

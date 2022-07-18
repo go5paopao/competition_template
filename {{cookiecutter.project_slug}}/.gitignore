@@ -1,0 +1,17 @@
+data/*
+input/*
+.DS_Store
+
+.ipynb_checkpoints/
+__pycache__/
+.virtual_documents/
+.vscode/
+
+*.csv
+*.xlsx
+*.gz
+*.pkl
+*.swp
+*.pyc
+*.tsv
+*.log

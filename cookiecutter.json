@@ -1,0 +1,6 @@
+{
+  "project_name": "competition_template",
+  "project_slug": "{{cookiecutter.project_name.lower().replace(' ', '_')}}",
+  "project_short_description": "code template for competition like kaggle",
+  "version": "0.0.1"
+}
